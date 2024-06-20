@@ -12,7 +12,7 @@ import { Participation } from "./Participation";
 
 
 export interface Country{
-    id?: string,
+    id?: number,
     country:string,
     participations:Participation[]
 }

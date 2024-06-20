@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './participation.component.html',
-  styleUrl: './participation.component.scss'
+  styleUrls: ['./participation.component.scss']
 })
 export class ParticipationComponent {
 

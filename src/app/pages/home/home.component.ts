@@ -4,6 +4,7 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
 import { ChartOptions } from 'chart.js';
 import { Country } from 'src/app/core/models/Olympic';
 import { Participation } from 'src/app/core/models/Participation';
+import { charsetDataTypes as toto } from 'src/app/core/types/charsetDataTypes';
 
 
 @Component({
@@ -20,12 +21,12 @@ export class HomeComponent implements OnInit {
   };
   //public pieChartLabels = [ [ 'Download', 'Sales' ], [ 'In', 'Store', 'Sales' ], 'Mail Sales' ];
   public pieChartLabels:string[] = [];//
-  public pieChartDatasets:any[]=[];
+  public pieChartDatasets: toto[] = [];
   public pieChartLegend = true;
   public pieChartPlugins = [];
 
 
-  constructor(private olympicService: OlympicService) {}
+  constructor(private olympicService: OlympicService,private instanceRouteur:Router) {}
 
   ngOnInit(): void {
     this.olympics$ = this.olympicService.getOlympics();
@@ -42,10 +43,11 @@ export class HomeComponent implements OnInit {
           })
           nbrOfMedals.push(totParticipation);
         }); 
-        const medals={
-          data:nbrOfMedals
-        }
-      this.pieChartDatasets.push(medals);
+              
+        this.pieChartDatasets = [{
+          data: nbrOfMedals,
+        }];
+
       }
       
 
@@ -57,9 +59,18 @@ export class HomeComponent implements OnInit {
   onChartClick = ($event:any) => 
     {
 
-      console.log($event);
+      
+      const pId = $event.active[0].index;
+      console.log("Index="+pId);
+      this.instanceRouteur.navigateByUrl('liste-participations/'+pId);
+
+
     };
+
+    
   
   
 
-}
+}import { charsetDataTypes } from 'src/app/core/types/charsetDataTypes';
+import { Router } from '@angular/router';
+

@@ -1,1 +1,15 @@
-<p>participations-list works!</p>
+
+
+<h1>{{ inputCountry.country}}</h1>
+<h2>Nombre de participations:{{ participationsQuantity }}</h2>
+<h2>Nombre total de médailles:{{ totalMedals }}</h2>
+<h2>Nombre total d'athlètes:{{ totalAthletes }}</h2>
+<br>
+<div style="display: block;">
+    <canvas baseChart width="400" height="400"
+      [type]="'line'"
+      [data]="lineChartData"
+      [options]="lineChartOptions"
+      [legend]="lineChartLegend">
+    </canvas>
+  </div>
