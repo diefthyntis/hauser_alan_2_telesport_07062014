@@ -24,24 +24,28 @@ export class HomeComponent implements OnInit {
   public pieChartDatasets: toto[] = [];
   public pieChartLegend = true;
   public pieChartPlugins = [];
+  public gameQuantity!:number;
+  public countriesQuantity!:number;
 
 
   constructor(private olympicService: OlympicService,private instanceRouteur:Router) {}
 
   ngOnInit(): void {
     this.olympics$ = this.olympicService.getOlympics();
-    this.olympics$.subscribe(result=>{
+    this.olympics$.subscribe(arrayCountries=>{
       let nbrOfMedals:number[]=[];
-      if (result!=undefined) {
-        result.forEach( (value:Country)=> {
+      if (arrayCountries!=undefined) {
+        this.countriesQuantity=arrayCountries.length;
+        arrayCountries.forEach( (value:Country)=> {
           console.log(value);
           this.pieChartLabels.push(value.country);
-          
+          this.gameQuantity = value.participations.length;
           let totParticipation=0;
           value.participations.forEach ((p:Participation)=>{
             totParticipation=totParticipation+p.medalsCount;
           })
           nbrOfMedals.push(totParticipation);
+          
         }); 
               
         this.pieChartDatasets = [{

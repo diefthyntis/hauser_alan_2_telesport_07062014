@@ -1,6 +1,7 @@
-<h2>Olympic games app</h2>
-<hr />
-<p>{{ (olympics$ | async)?.length }} data loaded</p>
+<div class="title">Medals per count</div><br>
+<div class="data">Number of JOs<br> {{ gameQuantity }}</div>
+<div class="data">Number of countries<br> {{ countriesQuantity }}</div>
+<div class="chart">
 <canvas baseChart
   [type]="'pie'"
   [datasets]="pieChartDatasets"
@@ -12,6 +13,6 @@
 
   [legend]="pieChartLegend">
 </canvas>
-
+</div>
 
 
