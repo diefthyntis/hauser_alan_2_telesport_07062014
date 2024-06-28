@@ -63,7 +63,7 @@ export class ParticipationsListComponent implements OnInit{
     datasets: [
       {
         data: this.arraysMedalsQuantities,
-        label: 'Nombre de médaille par année',
+        label: 'Dates',
         fill: true,
         tension: 0.5,
         borderColor: 'black',
