@@ -8,7 +8,6 @@
     line-height: 50px;
     font-size: large;
     font-weight: bold;
-    color: cadetblue;
     background-color: white;
 }
 .title{
@@ -30,4 +29,10 @@
 }
 .line {
     display: flex;
+}
+.quantity{
+    color:black;
+}
+.variable{
+    color: cadetblue;
 }
