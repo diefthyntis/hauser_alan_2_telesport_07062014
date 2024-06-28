@@ -1,6 +1,9 @@
-<div class="title">Medals per count</div><br>
-<div class="data">Number of JOs<br> {{ gameQuantity }}</div>
-<div class="data">Number of countries<br> {{ countriesQuantity }}</div>
+<div class="title">Medals per country</div><br>
+<div class="line">
+<div class="data"><div class="variable">Number of JOs</div><div class="quantity">{{ gameQuantity }}</div></div>&nbsp;
+<div class="data"><div class="variable">Number of countries</div><div class="quantity">{{ countriesQuantity }}</div></div>
+</div>
+<div class="line">&nbsp;</div>
 <div class="chart">
 <canvas baseChart
   [type]="'pie'"
