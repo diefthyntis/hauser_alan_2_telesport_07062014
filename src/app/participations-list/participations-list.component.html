@@ -1,10 +1,10 @@
-
-
-<h1>{{ inputCountry.country}}</h1>
-<h2>Nombre de participations:{{ participationsQuantity }}</h2>
-<h2>Nombre total de médailles:{{ totalMedals }}</h2>
-<h2>Nombre total d'athlètes:{{ totalAthletes }}</h2>
-<br>
+<div class="title">{{ inputCountry.country}}</div>
+<div>&nbsp;</div>
+<div class="line">
+<div class="data"><p>Number of entries</p><p>{{ participationsQuantity }}</p></div>&nbsp;
+<div class="data"><p>Total number medals</p><p>{{ totalMedals }}</p></div>&nbsp;
+<div class="data"><p>Total number of athletes</p><p>{{ totalAthletes }}</p></div>
+</div>
 <div style="display: block;">
     <canvas baseChart width="400" height="400"
       [type]="'line'"

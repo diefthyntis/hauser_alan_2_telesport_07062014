@@ -17,7 +17,10 @@ export class HomeComponent implements OnInit {
 
 
   public pieChartOptions: ChartOptions<'pie'> = {
-    responsive: false,
+    responsive: false
+
+
+
   };
   //public pieChartLabels = [ [ 'Download', 'Sales' ], [ 'In', 'Store', 'Sales' ], 'Mail Sales' ];
   public pieChartLabels:string[] = [];//
