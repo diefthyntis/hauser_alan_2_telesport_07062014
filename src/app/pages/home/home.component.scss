@@ -1,7 +1,21 @@
+
+.chart, .line,.title {
+    max-width: 600px;
+}
+
+.chart, .line,.title,.data {
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.line, .chart, .title,.data,.container  {
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
 .data{
     border: solid 1px;
-    width: 300px;
-    text-align: center;
     border-radius: 20px;
     vertical-align: middle;
     line-height: 50px;
@@ -9,12 +23,12 @@
     font-weight: bold;
     color: cadetblue;
     background-color: white;
+    width: 50%;
+    flex-wrap: nowrap;
 }
 .title{
     border: solid 1px;
-    width: 600px;
     height: 50px;
-    text-align: center;
     border-radius: 20px;
     vertical-align: middle;
     line-height: 50px;
@@ -23,18 +37,55 @@
     color: white;
     background-color: cadetblue;
 }
-.chart{
-    width: 500px;
-   
-}
 .line {
-    display: flex;
     height: 90px;
-    width: 900px;
+
 }
+
+.chart {
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    
+  }
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.line, .title, .container {
+    width: 100%;
+    
+}
+
 .quantity{
     color:black;
 }
 .variable{
     color: cadetblue;
 }
+
+/* Responsive à Samsung Galaxy S8+ */
+@media (max-width: 360px) {
+    .data,.title,.chart {
+      font-size: 1em;
+    }
+  
+    .variable, .quantity {
+      margin: 0 2px; 
+    }
+  }
+
+/* Responsive à Galaxy Z Fold 5 */
+@media (max-width: 344px) {
+    .data,.title,.chart {
+      font-size: 0.8em;
+       /* obligé de mettre 0.8 sinon si le nombre de pays contient 2 chiffres, il y aura un retour à la ligne*/
+    }
+
+  
+    .variable, .quantity {
+      margin: 0 2px; 
+    }
+  }

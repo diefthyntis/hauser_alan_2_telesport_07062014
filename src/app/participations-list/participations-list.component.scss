@@ -1,20 +1,18 @@
-.data{
-    border: solid 1px;
-    width: 300px;
-    
-    text-align: center;
-    border-radius: 20px;
-    vertical-align: middle;
-    line-height: 50px;
-    font-size: large;
-    font-weight: bold;
-    background-color: white;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    justify-content: center;
+    height: 100%;
+    max-height: 900px;
+    margin: 0 auto; 
 }
 .title{
+    display: flex;
     border: solid 1px;
-    width: 900px;
-    height: 50px;
-    text-align: center;
     border-radius: 20px;
     vertical-align: middle;
     line-height: 50px;
@@ -22,16 +20,123 @@
     font-weight: bold;
     color: white;
     background-color: cadetblue;
+    margin: 2px;
+    height:10%;
+    width: 100%;
+    max-width: 900px;
+    justify-content: center;
+    align-items: center;
 }
-.chart{
-    width: 500px;
-   
-}
+
 .line {
     display: flex;
-    height: 90px;
-    width: 900px;
+    margin: 2px;
+    max-width: 900px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
+.data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px;
+    border-radius: 20px;
+    vertical-align: middle;
+    line-height: 50px;
+    font-size: large;
+    font-weight: bold;
+    color: cadetblue;
+    background-color: white;
+    flex-wrap: nowrap;
+    margin: 10px;
+    
+}
+
+
+.chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; 
+    margin: 20px 0; 
+    box-sizing: border-box; 
+}
+
+
+
+
+
+
+
+
+
+  @media (max-width: 1300px) {
+    .line {
+        flex-direction: row; 
+        align-items: center;
+        height: 90px;
+    }
+    
+    .data {
+        width: 33%;     
+    }
+}
+
+
+@media (max-width: 800px) {
+    .line {
+        flex-direction: row; 
+        align-items: center;
+        height: 90px;
+    }
+    
+    .data {
+        width: 33%;    
+    }
+}
+
+@media (max-width: 450px) {
+     .line {
+        flex-direction: column;
+        align-items: center;
+        height: 33%;
+    }
+    
+    .data {
+        width: 100%; 
+        height: 10%;
+    }
+}
+
+
+/* Responsive à Samsung Galaxy S8+ */
+@media (max-width: 360px) {
+    .data,.title {
+      font-size: 1em;
+    }
+  
+    .variable, .quantity {
+      margin: 0 2px; 
+    }
+  }
+
+/* Responsive à Galaxy Z Fold 5 */
+@media (max-width: 344px) {
+    .data,.title {
+      font-size: 0.8em;
+       /* obligé de mettre 0.8 sinon si le nombre de pays contient 2 chiffres, il y aura un retour à la ligne*/
+    }
+
+  
+    .variable, .quantity {
+      margin: 0 2px; 
+    }
+  }
+
+
+
+
 .quantity{
     color:black;
 }

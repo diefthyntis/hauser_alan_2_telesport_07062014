@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ChartConfiguration, ChartOptions, ChartType } from "chart.js";
 import { Observable, of } from 'rxjs';
 import { OlympicService } from 'src/app/core/services/olympic.service';
@@ -25,14 +25,14 @@ export class ParticipationsListComponent implements OnInit{
 
 
 
-  constructor(private olympicService: OlympicService,private instanceActivatedRoute:ActivatedRoute) {
+  constructor(private olympicService: OlympicService,private instanceActivatedRoute:ActivatedRoute,private instanceRouteur:Router) {
   }
 
   ngOnInit(): void {
     this.idCountry = parseInt(this.instanceActivatedRoute.snapshot.params['id'])+1;
     console.log("idCountry induit"+this.idCountry);
     this.olympics$ = this.olympicService.getOlympics();
-    
+    let isFound = false
     this.olympics$.subscribe(returnedArrayCountries=>{
       
       if (returnedArrayCountries!=undefined) {
@@ -49,9 +49,13 @@ export class ParticipationsListComponent implements OnInit{
               this.totalAthletes = this.totalAthletes + instanceParticipation.athleteCount;
               this.totalMedals = this.totalMedals + instanceParticipation.medalsCount;
             };
+            isFound = true;
           };
         });
       }
+      if(!isFound){
+        this.instanceRouteur.navigateByUrl("not-found");
+    }
       
     });
     

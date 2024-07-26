@@ -17,8 +17,10 @@ export class HomeComponent implements OnInit {
 
 
   public pieChartOptions: ChartOptions<'pie'> = {
+    //responsive: false
     responsive: false
-
+    
+    
 
 
   };

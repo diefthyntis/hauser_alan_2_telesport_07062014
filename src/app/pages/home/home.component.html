@@ -1,9 +1,13 @@
-<div class="title">Medals per country</div><br>
+<div class="container">
+
+<div class="title">Medals per country</div>
+
 <div class="line">
-<div class="data"><div class="variable">Number of JOs</div><div class="quantity">{{ gameQuantity }}</div></div>&nbsp;
-<div class="data"><div class="variable">Number of countries</div><div class="quantity">{{ countriesQuantity }}</div></div>
+<div class="data"><div class="variable">Number of JOs</div>&nbsp;<div class="quantity">{{ gameQuantity }}</div></div>&nbsp;
+<div class="data"><div class="variable">Number of countries</div>&nbsp;<div class="quantity">{{ countriesQuantity }}</div></div>
 </div>
-<div class="line">&nbsp;</div>
+
+
 <div class="chart">
 <canvas baseChart
   [type]="'pie'"
@@ -17,5 +21,5 @@
   [legend]="pieChartLegend">
 </canvas>
 </div>
-
+</div>
 
